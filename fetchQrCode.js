@@ -62,10 +62,17 @@ function createParameters(UrlToEncode){
 
     let endpoint = `https://api.qrserver.com/v1/create-qr-code/?data=${url}&format=${format}&size=${size}&color=${color}&bgcolor=${bgColor}`;
 
-    displayCode(url, endpoint);
+    trimUrl(url, endpoint);
 }
 
-function displayCode(url, endpoint){
+function trimUrl(url, endpoint){
+
+    var domain = url.replace('http://','').replace('https://','').split(/[/?#]/)[0];
+
+    displayCode(url, domain, endpoint);
+}
+
+function displayCode(url, domain, endpoint){
 
     let qrWrapper = document.getElementById('qrWrapper');
 
@@ -73,7 +80,7 @@ function displayCode(url, endpoint){
 
     qrWrapper.innerHTML = `
     
-    <a href="${endpoint}" download="${url} QR-Code">
+    <a href="${endpoint}" download="${domain} QR-Code">
         <img src="${endpoint}" alt="${url} QR-Code" id="qrCode">
     </a>
     `;
