@@ -7,12 +7,17 @@
         <meta name="description" content="Turn URLs into QR-Codes">
         <meta name="keywords" content="QR-Code, QR, quick response, generator, svg, jpg, png, eps">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="generateQrCode.js.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <script src="generateQrCode.js"></script>
     </head>
     <body>
         <main>
-            
-            <header class="submitWrapper">
+
+            <header id="submitWrapper">
+        
+                <a href="www.qrify.genus-novum.com" id="logoWrapper">
+                    <img src="./img/qrify.png" alt="qrify QR-Code" id="logo">
+                </a>
                 
                 <form id="submitForm">
 
@@ -49,9 +54,9 @@
     
                     </select>
 
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom red value" id="customColR">
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom green value" id="customColG">
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom blue value" id="customColB">
+                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom red value" class="colorValue" id="customColR">
+                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom green value" class="colorValue" id="customColG">
+                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom blue value" class="colorValue" id="customColB">
 
                     <select id="selectBgColor" required>
 
@@ -65,9 +70,9 @@
     
                     </select>
 
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg red value" id="customBgColR">
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg green value" id="customBgColG">
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg blue value" id="customBgColB">
+                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg red value" class="colorValue" id="customBgColR">
+                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg green value" class="colorValue" id="customBgColG">
+                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg blue value" class="colorValue" id="customBgColB">
 
                     <input type="search" placeholder="Enter URL" id="submitInput">
                     <button type="submit" id="submitButton">QRify me!</button>
