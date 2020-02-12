@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="fetchQrCode.js"></script>
+    </head>
+    <body>
+        <main>
+            
+            <header class="submitWrapper">
+                
+                <form id="submitForm">
+
+                    <select id="selectFormat" required>
+
+                        <option value="" disabled selected hidden>Select format</option>
+                        <option value="png">png</option>
+                        <option value="gif">gif</option>
+                        <option value="jpg">jpg</option>
+                        <option value="svg">svg</option>
+                        <option value="eps">eps</option>
+    
+                    </select>
+
+                    <select id="selectSize" required>
+
+                        <option value="" disabled selected hidden>Select size</option>
+                        <option value="100x100">100x100</option>
+                        <option value="250x250">250x250</option>
+                        <option value="500x500">500x500</option>
+                        <option value="1000x1000">1000x1000</option>
+    
+                    </select>
+
+                    <select id="selectColor" required>
+
+                        <option value="" disabled selected hidden>Select color</option>
+                        <option value="0-0-0">Black</option>
+                        <option value="255-0-0">Red</option>
+                        <option value="0-255-0">Green</option>
+                        <option value="0-0-255">Blue</option>                        <option value="0-0-255">Blue</option>
+                        <option value="custom">Custom</option>
+    
+                    </select>
+
+                    <input type="text" placeholder="custom red value" id="customColR">
+                    <input type="text" placeholder="custom green value" id="customColG">
+                    <input type="text" placeholder="custom blue value" id="customColB">
+
+                    <input type="search" id="submitInput">
+                    <button type="submit" id="submitButton"></button>
+                </form>
+                <div id="resultWrapper">
+
+                </div>
+            </header>
+        </main>
+    </body>
+</html>
