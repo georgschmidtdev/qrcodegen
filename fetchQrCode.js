@@ -20,7 +20,49 @@ function handleSubmit(event){
 
 function fetchQrCode(UrlToEncode){
 
-    console.log(UrlToEncode);
+    let url = encodeURI(UrlToEncode);
 
-    let endpoint = 'http(s)://api.qrserver.com/v1/create-qr-code/?data=[URL-codierter-Text]&size=[Pixel]x[Pixel]'
+    console.log(url);
+
+    let selectFormat = document.getElementById('selectFormat');
+
+    let selectSize = document.getElementById('selectSize');
+
+    let selectColor = document.getElementById('selectColor');
+    let customColR = document.getElementById('customColR');
+    let customColG = document.getElementById('customColG');
+    let customColB = document.getElementById('customColB');
+
+    let selectBgColor = document.getElementById('selectBgColor');
+    let customBgColR = document.getElementById('customBgColR');
+    let customBgColG = document.getElementById('customBgColG');
+    let customBgColB = document.getElementById('customBgColB');
+
+    let format = selectFormat.value;
+    
+    let size = selectSize.value;
+
+    let color = '';
+
+    let bgColor = '';
+
+    if(selectColor.value == 'custom'){
+
+        color = `${customColR}-${customColG}-${customColB}`;
+    }else{
+
+        color = selectColor.value;
+    };
+
+    if(selectBgColor.value == 'custom'){
+
+        bgColor = `${customBgColR}-${customBgColG}-${customBgColB}`;
+    }else{
+
+        bgColor = selectBgColor.value;
+    };
+
+    let endpoint = `https://api.qrserver.com/v1/create-qr-code/?data=${url}&format=${format}&size=${size}&color=${color}&bgcolor=${bgColor}`;
+
+    console.log(endpoint);
 }
