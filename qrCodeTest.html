@@ -35,9 +35,10 @@
 
                         <option value="" disabled selected hidden>Select color</option>
                         <option value="0-0-0">Black</option>
+                        <option value="255-255-255">White</option>
                         <option value="255-0-0">Red</option>
                         <option value="0-255-0">Green</option>
-                        <option value="0-0-255">Blue</option>                        <option value="0-0-255">Blue</option>
+                        <option value="0-0-255">Blue</option>
                         <option value="custom">Custom</option>
     
                     </select>
@@ -46,8 +47,24 @@
                     <input type="text" placeholder="custom green value" id="customColG">
                     <input type="text" placeholder="custom blue value" id="customColB">
 
-                    <input type="search" id="submitInput">
-                    <button type="submit" id="submitButton"></button>
+                    <select id="selectBgColor" required>
+
+                        <option value="" disabled selected hidden>Select background color</option>
+                        <option value="0-0-0">Black</option>
+                        <option value="255-255-255">White</option>
+                        <option value="255-0-0">Red</option>
+                        <option value="0-255-0">Green</option>
+                        <option value="0-0-255">Blue</option>
+                        <option value="custom">Custom</option>
+    
+                    </select>
+
+                    <input type="text" placeholder="custom bg red value" id="customBgColR">
+                    <input type="text" placeholder="custom bg green value" id="customBgColG">
+                    <input type="text" placeholder="custom bg blue value" id="customBgColB">
+
+                    <input type="search" placeholder="Enter URL" id="submitInput">
+                    <button type="submit" id="submitButton">QRify me!</button>
                 </form>
                 <div id="resultWrapper">
 
