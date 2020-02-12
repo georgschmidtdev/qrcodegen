@@ -15,10 +15,10 @@ function handleSubmit(event){
 
     let submitQuery = submitInput.trim();
 
-    fetchQrCode(submitQuery);
+    createParameters(submitQuery);
 }
 
-function fetchQrCode(UrlToEncode){
+function createParameters(UrlToEncode){
 
     let url = encodeURI(UrlToEncode);
 
@@ -61,4 +61,20 @@ function fetchQrCode(UrlToEncode){
     };
 
     let endpoint = `https://api.qrserver.com/v1/create-qr-code/?data=${url}&format=${format}&size=${size}&color=${color}&bgcolor=${bgColor}`;
+
+    displayCode(url, endpoint);
+}
+
+function displayCode(url, endpoint){
+
+    let qrWrapper = document.getElementById('qrWrapper');
+
+    qrWrapper.innerHTML = ``;
+
+    qrWrapper.innerHTML = `
+    
+    <a href="${endpoint}" download="${url} QR-Code">
+        <img src="${endpoint}" alt="${url} QR-Code" id="qrCode">
+    </a>
+    `;
 }
