@@ -62,10 +62,10 @@ function createParameters(UrlToEncode){
 
     let endpoint = `https://api.qrserver.com/v1/create-qr-code/?data=${url}&format=${format}&size=${size}&color=${color}&bgcolor=${bgColor}`;
 
-    trimUrl(url, endpoint);
+    extractDomain(url, endpoint);
 }
 
-function trimUrl(url, endpoint){
+function extractDomain(url, endpoint){
 
     var domain = url.replace('http://','').replace('https://','').split(/[/?#]/)[0];
 
