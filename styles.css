@@ -53,3 +53,19 @@ select, input, button{
     width: 30%;
 }
 
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer ul{
+    display: block;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+footer li{
+    display: inline;
+}
+
