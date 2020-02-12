@@ -1,2 +1,2 @@
-# qrcodegen
-Cross platform QR-code generator 
+# qrify
+Cross platform QR-code generator PWA
