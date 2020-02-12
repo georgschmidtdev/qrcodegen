@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body, main{
+    width: 100vw;
+}
+
+header{
+    width: 80vw;
+    margin: 5vh auto;
+}
+
+#logoWrapper{
+    display: block;
+    width: 20vw;
+    margin: 0 auto;
+}
+
+#logo{
+    width:  100%;
+}
+
+#submitForm{
+    display: block;
+    margin: 2vh 0;
+}
+
+select, input{
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+button{
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+}
+
+select, input, button{
+    margin-top: 2vh;
+    font-size: 1.3em;
+}
+
+#submitInput{
+    width: 100%;
+}
+
+.colorValue{
+    width: 30%;
+}
+
