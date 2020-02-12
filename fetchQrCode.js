@@ -22,8 +22,6 @@ function fetchQrCode(UrlToEncode){
 
     let url = encodeURI(UrlToEncode);
 
-    console.log(url);
-
     let selectFormat = document.getElementById('selectFormat');
 
     let selectSize = document.getElementById('selectSize');
@@ -42,13 +40,13 @@ function fetchQrCode(UrlToEncode){
     
     let size = selectSize.value;
 
-    let color = '';
+    let color;
 
-    let bgColor = '';
+    let bgColor;
 
     if(selectColor.value == 'custom'){
 
-        color = `${customColR}-${customColG}-${customColB}`;
+        color = `${customColR.value}-${customColG.value}-${customColB.value}`;
     }else{
 
         color = selectColor.value;
@@ -56,13 +54,11 @@ function fetchQrCode(UrlToEncode){
 
     if(selectBgColor.value == 'custom'){
 
-        bgColor = `${customBgColR}-${customBgColG}-${customBgColB}`;
+        bgColor = `${customBgColR.value}-${customBgColG.value}-${customBgColB.value}`;
     }else{
 
         bgColor = selectBgColor.value;
     };
 
     let endpoint = `https://api.qrserver.com/v1/create-qr-code/?data=${url}&format=${format}&size=${size}&color=${color}&bgcolor=${bgColor}`;
-
-    console.log(endpoint);
 }
