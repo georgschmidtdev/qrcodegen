@@ -19,11 +19,12 @@
                     <img src="./img/qrify.png" alt="qrify QR-Code" id="logo">
                 </a>
                 
-                <form id="submitForm">
+                <form id="submitForm" >
 
+                    <label for="selectFormat" class="selectLable">Select file format</label>
                     <select id="selectFormat" required>
 
-                        <option value="" disabled selected hidden>Select format</option>
+                        <option value="" disabled selected hidden>File format</option>
                         <option value="png">png</option>
                         <option value="gif">gif</option>
                         <option value="jpg">jpg</option>
@@ -32,6 +33,7 @@
     
                     </select>
 
+                    <label for="selectSizeImg" class="selectLable">Select QR-Code size</label>
                     <select id="selectSizeImg" required>
 
                         <option value="" disabled selected hidden>Select size</option>
@@ -42,6 +44,7 @@
     
                     </select>
 
+                    <label for="selectSizeVector" class="selectLable">Select QR-Code size</label>
                     <select id="selectSizeVector" required>
 
                         <option value="" disabled selected hidden>Select size</option>
@@ -56,7 +59,7 @@
     
                     </select>
 
-                    <div class="selectTitle">Color</div>
+                    <label for="selectColor" class="selectLable">Color</label>
                     <select id="selectColor" required>
 
                         <option value="default">Black (Recommended)</option>
@@ -72,7 +75,7 @@
                     <input type="number" min="0" max="255" step="1" value="0" placeholder="custom green value" class="colorValue" id="customColG">
                     <input type="number" min="0" max="255" step="1" value="0" placeholder="custom blue value" class="colorValue" id="customColB">
 
-                    <div class="selectTitle">Background color</div>
+                    <label for="selectBgColor" class="selectLable">Background color</label>
                     <select id="selectBgColor" required>
 
                         <option value="default">White (Recommended)</option>
@@ -88,6 +91,7 @@
                     <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg green value" class="bgColorValue" id="customBgColG">
                     <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg blue value" class="bgColorValue" id="customBgColB">
 
+                    <label for="submitInput" class="selectLable">Url to turn into QR-Code</label>
                     <input type="search" placeholder="Enter URL" id="submitInput" required>
                     <button type="submit" id="submitButton">QR-ify</button>
                 </form>

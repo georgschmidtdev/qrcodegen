@@ -31,7 +31,7 @@ header{
     margin: 2vh auto;
 }
 
-select, .selectTitle, input{
+select, .selectLable, input{
     display: block;
     width: 60%;
     margin: 0 auto;
@@ -43,7 +43,7 @@ button{
     margin: 0 auto;
 }
 
-select,.selectTitle, input, button{
+select,.selectLable, input, button{
     margin-top: 2vh;
     font-size: 1.3em;
 }
