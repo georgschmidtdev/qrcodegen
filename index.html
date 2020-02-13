@@ -32,7 +32,7 @@
     
                     </select>
 
-                    <select id="selectSize" required>
+                    <select id="selectSizeImg" required>
 
                         <option value="" disabled selected hidden>Select size</option>
                         <option value="100x100">100x100</option>
@@ -42,10 +42,24 @@
     
                     </select>
 
+                    <select id="selectSizeVector" required>
+
+                        <option value="" disabled selected hidden>Select size</option>
+                        <option value="100x100">100x100</option>
+                        <option value="250x250">250x250</option>
+                        <option value="500x500">500x500</option>
+                        <option value="1000x1000">1000x1000</option>
+                        <option value="2500x2500">2500x2500</option>
+                        <option value="5000x5000">5000x5000</option>
+                        <option value="10000x10000">10000x10000</option>
+                        <option value="100000x10000">100000x100000</option>
+    
+                    </select>
+
                     <select id="selectColor" required>
 
                         <option value="" disabled selected hidden>Select color</option>
-                        <option value="0-0-0">Black</option>
+                        <option value="default">Default (Black)</option>
                         <option value="255-255-255">White</option>
                         <option value="255-0-0">Red</option>
                         <option value="0-255-0">Green</option>
@@ -62,7 +76,7 @@
 
                         <option value="" disabled selected hidden>Select background color</option>
                         <option value="0-0-0">Black</option>
-                        <option value="255-255-255">White</option>
+                        <option value="default">White</option>
                         <option value="255-0-0">Red</option>
                         <option value="0-255-0">Green</option>
                         <option value="0-0-255">Blue</option>
@@ -70,15 +84,15 @@
     
                     </select>
 
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg red value" class="colorValue" id="customBgColR">
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg green value" class="colorValue" id="customBgColG">
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg blue value" class="colorValue" id="customBgColB">
+                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg red value" class="bgColorValue" id="customBgColR">
+                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg green value" class="bgColorValue" id="customBgColG">
+                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg blue value" class="bgColorValue" id="customBgColB">
 
-                    <input type="search" placeholder="Enter URL" id="submitInput">
+                    <input type="search" placeholder="Enter URL" id="submitInput" required>
                     <button type="submit" id="submitButton">QRify me!</button>
                 </form>
                 <div id="qrWrapper">
-                
+                    
                 </div>
             </header>
             <footer>

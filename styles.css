@@ -49,8 +49,18 @@ select, input, button{
     width: 100%;
 }
 
-.colorValue{
+.colorValue, .bgColorValue{
     width: 30%;
+}
+
+#qrWrapper{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+#qrCode{
+    width: 100%;
 }
 
 footer{
