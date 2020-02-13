@@ -2,12 +2,28 @@
     "name": "QR-ify",
     "short_name": "QR-ify",
     "icons": [{
-        "src": "/img/qrify.png",
+        "src": "/img/qrify_100.png",
         "sizes": "100x100",
+        "type": "image/png"
+    }, {
+        "src": "/img/qrify_200.png",
+        "sizes": "200x200",
+        "type": "image/png"
+    }, {
+        "src": "/img/qrify_300.png",
+        "sizes": "300x300",
+        "type": "image/png"
+    }, {
+        "src": "/img/qrify_400.png",
+        "sizes": "400x400",
+        "type": "image/png"
+    }, {
+        "src": "/img/qrify_500.png",
+        "sizes": "500x500",
         "type": "image/png"
     }],
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#FFFFFF",
-    "theme_color": "000000"
+    "theme_color": "#00FFCC"
 }
