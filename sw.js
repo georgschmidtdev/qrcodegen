@@ -17,6 +17,7 @@ self.addEventListener('install', function(e) {
                 '/img/qrify_300.png',
                 '/img/qrify_400.png',
                 '/img/qrify_500.png',
+                '/img/qrify_1000.png'
             ]);
         })
     );
