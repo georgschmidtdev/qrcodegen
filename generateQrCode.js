@@ -14,8 +14,6 @@ let selectBgColor;
 
 let bgColorInputs;
 
-let lables;
-
 document.addEventListener("DOMContentLoaded", assignVariables, false);
 
 function assignVariables(){
@@ -59,14 +57,6 @@ function assignVariables(){
     bgColorInputs.forEach(input => {
 
         input.style.display = "none";
-    })
-
-
-    lables = document.querySelectorAll('.selectLable');
-
-    lables.forEach(lable => {
-
-        lable.style.display = "none";
     })
 }
 

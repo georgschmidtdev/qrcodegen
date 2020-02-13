@@ -5,6 +5,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+lable{
+    font-size: 0em;
+}
+
 /* mobile */
 
 html, body, main{
@@ -31,7 +35,7 @@ header{
     margin: 2vh auto;
 }
 
-select, .selectLable, input{
+select, input{
     display: block;
     width: 60%;
     margin: 0 auto;
@@ -43,9 +47,13 @@ button{
     margin: 0 auto;
 }
 
-select,.selectLable, input, button{
+select, input, button{
     margin-top: 2vh;
     font-size: 1.3em;
+}
+
+label{
+    font-size: 0em;
 }
 
 #submitInput{
