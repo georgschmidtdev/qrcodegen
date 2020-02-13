@@ -2,7 +2,12 @@ let deferredPrompt;
 
 let addToHs;
 
-document.addEventListener("DOMContentLoaded", assignBtn, false);
+window.addEventListener('beforeinstallprompt', (event) => {
+
+    deferredPrompt = event;
+
+    assignBtn();
+})
 
 function assignBtn(){
     
@@ -28,12 +33,7 @@ function assignBtn(){
     })
 }
 
-window.addEventListener('beforeinstallprompt', (e) => {
+window.addEventListener('appinstalled', (event) => {
 
-    deferredPrompt = e;
-})
-
-window.addEventListener('appinstalled', (evt) => {
-
-    console.log('app installed');
+    console.log('app installed', event);
 })
