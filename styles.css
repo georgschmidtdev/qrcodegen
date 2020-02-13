@@ -5,6 +5,8 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* mobile */
+
 html, body, main{
     width: 100vw;
 }
@@ -26,7 +28,7 @@ header{
 
 #submitForm{
     display: block;
-    margin: 2vh 0;
+    margin: 2vh auto;
 }
 
 select, .selectTitle, input{
@@ -80,3 +82,17 @@ footer li{
     display: inline;
 }
 
+
+/* tablets */
+
+@media only screen and (min-width: 600px) {
+
+
+}
+
+/* desktop */
+
+@media only screen and (min-width: 768px) {
+
+
+}
