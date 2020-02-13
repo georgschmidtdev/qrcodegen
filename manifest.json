@@ -1,0 +1,13 @@
+{
+    "name": "QR-ify",
+    "short_name": "QR-ify",
+    "icons": [{
+        "src": "/img/qrify.png",
+        "sizes": "100x100",
+        "type": "image/png"
+    }],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "000000"
+}
