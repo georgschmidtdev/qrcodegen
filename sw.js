@@ -12,6 +12,7 @@ self.addEventListener('install', function(e) {
                 '/?homescreen=1',
                 '/styles.css',
                 '/generateQrCode.js',
+                '/installHandler.js',
                 '/img/qrify_100.png',
                 '/img/qrify_192.png',
                 '/img/qrify_300.png',
