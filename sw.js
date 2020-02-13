@@ -13,10 +13,10 @@ self.addEventListener('install', function(e) {
                 '/styles.css',
                 '/generateQrCode.js',
                 '/img/qrify_100.png',
-                '/img/qrify_200.png',
+                '/img/qrify_192.png',
                 '/img/qrify_300.png',
                 '/img/qrify_400.png',
-                '/img/qrify_500.png',
+                '/img/qrify_512.png',
                 '/img/qrify_1000.png'
             ]);
         })
