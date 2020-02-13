@@ -8,7 +8,11 @@ let selectSizeVector;
 
 let selectColor;
 
+let colorInputs;
+
 let selectBgColor;
+
+let bgColorInputs;
 
 document.addEventListener("DOMContentLoaded", assignVariables, false);
 
@@ -36,10 +40,24 @@ function assignVariables(){
 
     selectColor.addEventListener('change', changeColVis);
 
+    colorInputs = document.querySelectorAll('.colorValue');
+
+    colorInputs.forEach(input => {
+
+        input.style.display = "none";
+    })
+
 
     selectBgColor = document.getElementById('selectBgColor');
 
-    selectBgColor.addEventListener('change', changeBgColVis);
+    selectBgColor.addEventListener('change', changeColVis);
+
+    bgColorInputs = document.querySelectorAll('.bgColorValue');
+
+    bgColorInputs.forEach(input => {
+
+        input.style.display = "none";
+    })
 }
 
 function handleSubmit(event){
@@ -57,17 +75,64 @@ function changeSizeOptions(event){
     
     event.preventDefault();
 
-    if(selectFormat.value == "svg" || selectFormat.value == "eps"){
+    if(
+        selectFormat.value == "svg" ||
+        selectFormat.value == "eps"){
 
         selectSizeImg.style.display = "none";
 
+        selectSizeImg.removeAttribute("required");
+
         selectSizeVector.style.display = "block";
-    }else
-    if(selectFormat.value == "png" || selectFormat.value == "gif" || selectFormat == "jpg"){
+
+        selectSizeVector.setAttribute("required", "");
+    }
+    
+    else if(
+        selectFormat.value == "png" ||
+        selectFormat.value == "gif" ||
+        selectFormat == "jpg"){
 
         selectSizeVector.style.display = "none";
 
+        selectSizeVector.removeAttribute("required");
+
         selectSizeImg.style.display = "block";
+
+        selectSizeImg.setAttribute("required", "");
+    }
+}
+
+function changeColVis(){
+
+    if(selectColor.value == "custom"){
+
+        colorInputs.forEach(input => {
+
+            input.style.display = "block";
+        })
+    }
+    else {
+
+        colorInputs.forEach(input => {
+
+            input.style.display = "none";
+        })
+    }
+
+    if(selectBgColor.value == "custom"){
+
+        bgColorInputs.forEach(input => {
+
+            input.style.display = "block";
+        })
+    }
+    else {
+
+        bgColorInputs.forEach(input => {
+
+            input.style.display = "none";
+        })
     }
 }
 
@@ -87,11 +152,26 @@ function createParameters(UrlToEncode){
 
     let format = selectFormat.value;
     
-    let size = selectSize.value;
+    let size;
 
     let color;
 
     let bgColor;
+
+    if(
+        selectFormat.value == "svg" ||
+        selectFormat.value == "eps"){
+
+            size = selectSizeVector.value;
+    }
+    
+    else if (
+        selectFormat.value == "png" ||
+        selectFormat.value == "gif" ||
+        selectFormat.value == "jpg") {
+
+            size = selectSizeImg.value;
+    }
 
     if(selectColor.value == 'custom'){
 
