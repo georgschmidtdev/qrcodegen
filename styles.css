@@ -176,7 +176,7 @@ lable{
     }
 
     header{
-        width: 60vw;
+        width: 40vw;
         margin: 5vh auto;
         clear: both;
     }
@@ -202,7 +202,7 @@ lable{
 
     select, input{
         display: block;
-        padding: 1vw;
+        padding: 0.5vw;
         background-color: white;
         border-color: #00FFCC;
         box-shadow: none;
@@ -240,19 +240,19 @@ lable{
         width: 30%;
     }
 
-    #submitButton{
+    #submitButton, #reload{
         clear: both;
         padding: 1vw;
         background-color: #00FFCC;
         color: white;
-        border-style: none;
-    }
-
-    #submitButton:hover{
-        background-color: white;
-        color: #00FFCC;
         border-style: solid;
         border-color: #00FFCC;
+        font-size: 1.3em;
+    }
+
+    #submitButton:hover, #reload:hover{
+        background-color: white;
+        color: #00FFCC;
     }
 
     #qrWrapper{
