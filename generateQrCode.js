@@ -1,20 +1,22 @@
 let submitForm;
 
+let submitButton;
+
+let reloadButton;
+
 let selectFormat;
-
-let selectSizeImg;
-
-let selectSizeVector;
 
 let selectColor;
 
-let colorInputs;
-
 let selectBgColor;
 
-let bgColorInputs;
+let sizeWrapper;
 
-document.addEventListener("DOMContentLoaded", assignVariables, false);
+let customColWrapper;
+
+let boolReload = false;
+
+document.addEventListener('DOMContentLoaded', assignVariables, false);
 
 function assignVariables(){
 
@@ -22,41 +24,41 @@ function assignVariables(){
 
     submitForm.addEventListener('submit', handleSubmit);
 
+    submitButton = document.getElementById('submitButton');
+
+    reloadButton = document.getElementById('reload');
+
+    reloadButton.addEventListener('click', () => {
+
+        window.location.reload();
+    })
+
 
     selectFormat = document.getElementById('selectFormat');
 
     selectFormat.addEventListener('change', changeSizeOptions);
 
-    selectSizeImg = document.getElementById('selectSizeImg');
+    sizeWrapper = document.querySelectorAll('.sizeWrapper');
 
-    selectSizeVector = document.getElementById('selectSizeVector');
+    sizeWrapper.forEach(wrapper => {
 
-    selectSizeImg.style.display = "none";
-
-    selectSizeVector.style.display = "none";
+        wrapper.style.display = 'none';
+    })
 
 
     selectColor = document.getElementById('selectColor');
 
     selectColor.addEventListener('change', changeColVis);
 
-    colorInputs = document.querySelectorAll('.colorValue');
-
-    colorInputs.forEach(input => {
-
-        input.style.display = "none";
-    })
-
-
     selectBgColor = document.getElementById('selectBgColor');
 
     selectBgColor.addEventListener('change', changeColVis);
 
-    bgColorInputs = document.querySelectorAll('.bgColorValue');
+    customColWrapper = document.querySelectorAll('.customColWrapper');
 
-    bgColorInputs.forEach(input => {
+    customColWrapper.forEach(wrapper => {
 
-        input.style.display = "none";
+        wrapper.style.display = 'none';
     })
 }
 
@@ -64,11 +66,16 @@ function handleSubmit(event){
 
     event.preventDefault();
 
-    let submitInput = document.getElementById('submitInput').value;
+    if(boolReload === false){
 
-    let submitQuery = submitInput.trim();
+        let submitInput = document.getElementById('submitInput').value;
 
-    createParameters(submitQuery);
+        let submitQuery = submitInput.trim();
+
+        reloadVisibility();
+
+        createParameters(submitQuery);
+    }
 }
 
 function changeSizeOptions(event){
@@ -76,71 +83,57 @@ function changeSizeOptions(event){
     event.preventDefault();
 
     if(
-        selectFormat.value == "svg" ||
-        selectFormat.value == "eps"){
+        selectFormat.value == 'svg' ||
+        selectFormat.value == 'eps'){
 
-        selectSizeImg.style.display = "none";
+        sizeWrapper[0].style.display = 'none';
 
-        selectSizeImg.removeAttribute("required");
+        sizeWrapper[0].removeAttribute('required');
 
-        selectSizeVector.style.display = "block";
+        sizeWrapper[1].style.display = 'block';
 
-        selectSizeVector.setAttribute("required", "");
+        sizeWrapper[1].setAttribute('required', '');
     }
     
     else if(
-        selectFormat.value == "png" ||
-        selectFormat.value == "gif" ||
-        selectFormat == "jpg"){
+        selectFormat.value == 'png' ||
+        selectFormat.value == 'gif' ||
+        selectFormat == 'jpg'){
 
-        selectSizeVector.style.display = "none";
+        sizeWrapper[1].style.display = 'none';
 
-        selectSizeVector.removeAttribute("required");
-
-        selectSizeImg.style.display = "block";
-
-        selectSizeImg.setAttribute("required", "");
+        sizeWrapper[1].removeAttribute('required');
+    
+        sizeWrapper[0].style.display = 'block';
+    
+        sizeWrapper[0].setAttribute('required', '');
     }
 }
 
 function changeColVis(){
 
-    if(selectColor.value == "custom"){
+    if(selectColor.value == 'custom'){
 
-        colorInputs.forEach(input => {
-
-            input.style.display = "block";
-        })
+        customColWrapper[0].style.display = 'block';
     }
     else {
 
-        colorInputs.forEach(input => {
-
-            input.style.display = "none";
-        })
+        customColWrapper[0].style.display = 'none';
     }
 
-    if(selectBgColor.value == "custom"){
+    if(selectBgColor.value == 'custom'){
 
-        bgColorInputs.forEach(input => {
-
-            input.style.display = "block";
-        })
+        customColWrapper[1].style.display = 'block';
     }
     else {
 
-        bgColorInputs.forEach(input => {
-
-            input.style.display = "none";
-        })
+        customColWrapper[1].style.display = 'none';
     }
 }
 
 function createParameters(UrlToEncode){
 
     let url = encodeURI(UrlToEncode);
-
-    let selectSize = document.getElementById('selectSize');
 
     let customColR = document.getElementById('customColR');
     let customColG = document.getElementById('customColG');
@@ -159,16 +152,16 @@ function createParameters(UrlToEncode){
     let bgColor;
 
     if(
-        selectFormat.value == "svg" ||
-        selectFormat.value == "eps"){
+        selectFormat.value == 'svg' ||
+        selectFormat.value == 'eps'){
 
             size = selectSizeVector.value;
     }
     
     else if (
-        selectFormat.value == "png" ||
-        selectFormat.value == "gif" ||
-        selectFormat.value == "jpg") {
+        selectFormat.value == 'png' ||
+        selectFormat.value == 'gif' ||
+        selectFormat.value == 'jpg') {
 
             size = selectSizeImg.value;
     }
@@ -217,9 +210,18 @@ function displayCode(url, domain, endpoint, callback){
     callback();
 }
 
+function reloadVisibility(){
+
+    boolReload = true;
+
+    submitButton.style.display = 'none';
+
+    reloadButton.style.display = 'block';
+}
+
 function scrollToResult(){
 
     let wrapper = document.getElementById('qrWrapper');
 
-    wrapper.scrollIntoView({block: "end", behavior: 'smooth'});
+    wrapper.scrollIntoView({block: 'end', behavior: 'smooth'});
 }
