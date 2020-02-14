@@ -16,7 +16,11 @@ let customColWrapper;
 
 let boolReload = false;
 
+// Listen for page to load
+
 document.addEventListener('DOMContentLoaded', assignVariables, false);
+
+// Assign HTML-Elements to variables
 
 function assignVariables(){
 
@@ -28,17 +32,20 @@ function assignVariables(){
 
     reloadButton = document.getElementById('reload');
 
+    // Reload page when reload button is clicked
+
     reloadButton.addEventListener('click', () => {
 
         window.location.reload();
     })
-
 
     selectFormat = document.getElementById('selectFormat');
 
     selectFormat.addEventListener('change', changeSizeOptions);
 
     sizeWrapper = document.querySelectorAll('.sizeWrapper');
+
+    // Disable wrapper on load
 
     sizeWrapper.forEach(wrapper => {
 
@@ -56,11 +63,15 @@ function assignVariables(){
 
     customColWrapper = document.querySelectorAll('.customColWrapper');
 
+    // Disable wrapper on load
+
     customColWrapper.forEach(wrapper => {
 
         wrapper.style.display = 'none';
     })
 }
+
+// Handle visibility of HTML-elements
 
 function handleSubmit(event){
 
@@ -78,9 +89,13 @@ function handleSubmit(event){
     }
 }
 
+// Handle visibilty of size options
+
 function changeSizeOptions(event){
     
     event.preventDefault();
+
+    // Disable / enable img size selectors
 
     if(
         selectFormat.value == 'svg' ||
@@ -94,6 +109,8 @@ function changeSizeOptions(event){
 
         sizeWrapper[1].setAttribute('required', '');
     }
+
+    // Disable / enable vector size selectors
     
     else if(
         selectFormat.value == 'png' ||
@@ -109,6 +126,8 @@ function changeSizeOptions(event){
         sizeWrapper[0].setAttribute('required', '');
     }
 }
+
+// Disable / enable color selector 
 
 function changeColVis(){
 
@@ -131,6 +150,8 @@ function changeColVis(){
     }
 }
 
+// Handle parameters for API
+
 function createParameters(UrlToEncode){
 
     let url = encodeURI(UrlToEncode);
@@ -151,13 +172,17 @@ function createParameters(UrlToEncode){
 
     let bgColor;
 
+    // Use value of vector size selector if vector format is selected
+
     if(
         selectFormat.value == 'svg' ||
         selectFormat.value == 'eps'){
 
             size = selectSizeVector.value;
     }
-    
+
+    // Use value of img size selector if img format is selected
+
     else if (
         selectFormat.value == 'png' ||
         selectFormat.value == 'gif' ||
@@ -165,6 +190,8 @@ function createParameters(UrlToEncode){
 
             size = selectSizeImg.value;
     }
+
+    // Use custom color if custom is selected
 
     if(selectColor.value == 'custom'){
 
@@ -174,6 +201,8 @@ function createParameters(UrlToEncode){
         color = selectColor.value;
     };
 
+    // Use custom bg color if custom is selected
+
     if(selectBgColor.value == 'custom'){
 
         bgColor = `${customBgColR.value}-${customBgColG.value}-${customBgColB.value}`;
@@ -182,19 +211,25 @@ function createParameters(UrlToEncode){
         bgColor = selectBgColor.value;
     };
 
+    // Concat API endpoint with parameters
+
     let endpoint = `https://api.qrserver.com/v1/create-qr-code/?data=${url}&format=${format}&size=${size}&color=${color}&bgcolor=${bgColor}`;
 
     extractDomain(url, endpoint);
 }
 
+// Extract domain from input url
+
 function extractDomain(url, endpoint){
 
     var domain = url.replace('http://','').replace('https://','').split(/[/?#]/)[0];
 
-    displayCode(url, domain, endpoint, scrollToResult);
+    displayCode(url, domain, endpoint);
 }
 
-function displayCode(url, domain, endpoint, callback){
+// Inject QR-Code as HTML into DOM
+
+function displayCode(url, domain, endpoint){
 
     let qrWrapper = document.getElementById('qrWrapper');
 
@@ -206,9 +241,9 @@ function displayCode(url, domain, endpoint, callback){
         <img src="${endpoint}" alt="${url} QR-Code" id="qrCode">
     </a>
     `;
-
-    callback();
 }
+
+// Handle visibility of reload button
 
 function reloadVisibility(){
 
@@ -217,11 +252,4 @@ function reloadVisibility(){
     submitButton.style.display = 'none';
 
     reloadButton.style.display = 'block';
-}
-
-function scrollToResult(){
-
-    let wrapper = document.getElementById('qrWrapper');
-
-    wrapper.scrollIntoView({block: 'end', behavior: 'smooth'});
 }
