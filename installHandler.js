@@ -2,6 +2,11 @@ let deferredPrompt;
 
 let addToHs;
 
+window.addEventListener('DOMContentLoaded', () => {
+    
+    addToHs = document.getElementById('addToHs');
+})
+
 window.addEventListener('beforeinstallprompt', (event) => {
 
     deferredPrompt = event;
@@ -10,8 +15,6 @@ window.addEventListener('beforeinstallprompt', (event) => {
 })
 
 function assignBtn(){
-    
-    addToHs = document.getElementById('addToHs');
 
     addToHs.addEventListener('click', (e) => {
 
@@ -36,4 +39,8 @@ function assignBtn(){
 window.addEventListener('appinstalled', (event) => {
 
     console.log('app installed', event);
+
+    let addToHs = document.getElementById('addToHs');
+
+    addToHs.style.display = 'none';
 })
