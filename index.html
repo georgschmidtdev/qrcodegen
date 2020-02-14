@@ -35,77 +35,86 @@
                 
                 <form id="submitForm" >
 
-                    <label for="selectFormat" class="selectLable">Select file format</label>
-                    <select id="selectFormat" required>
+                    <div id="formatWrapper">
+                        <label for="selectFormat" class="selectLable">Select file format</label>
+                        <select id="selectFormat" required>
 
-                        <option value="" disabled selected hidden>File format</option>
-                        <option value="png">png</option>
-                        <option value="gif">gif</option>
-                        <option value="jpg">jpg</option>
-                        <option value="svg">svg</option>
-                        <option value="eps">eps</option>
-    
-                    </select>
+                            <option value="" disabled selected hidden>File format</option>
+                            <option value="png">png</option>
+                            <option value="gif">gif</option>
+                            <option value="jpg">jpg</option>
+                            <option value="svg">svg</option>
+                            <option value="eps">eps</option>
+                        </select>
+                    </div>
 
-                    <label for="selectSizeImg" class="selectLable">Select QR-Code size</label>
-                    <select id="selectSizeImg">
+                    <div class="sizeWrapper">
+                        <label for="selectSizeImg" class="selectLable">Select QR-Code size</label>
+                        <select id="selectSizeImg">
 
-                        <option value="" disabled selected hidden>Select size</option>
-                        <option value="100x100">100x100</option>
-                        <option value="250x250">250x250</option>
-                        <option value="500x500">500x500</option>
-                        <option value="1000x1000">1000x1000</option>
-    
-                    </select>
+                            <option value="" disabled selected hidden>Select size</option>
+                            <option value="100x100">100x100</option>
+                            <option value="250x250">250x250</option>
+                            <option value="500x500">500x500</option>
+                            <option value="1000x1000">1000x1000</option>
+                        </select>
+                    </div>
 
-                    <label for="selectSizeVector" class="selectLable">Select QR-Code size</label>
-                    <select id="selectSizeVector">
+                    <div class="sizeWrapper">
+                        <label for="selectSizeVector" class="selectLable">Select QR-Code size</label>
+                        <select id="selectSizeVector">
 
-                        <option value="" disabled selected hidden>Select size</option>
-                        <option value="100x100">100x100</option>
-                        <option value="250x250">250x250</option>
-                        <option value="500x500">500x500</option>
-                        <option value="1000x1000">1000x1000</option>
-                        <option value="2500x2500">2500x2500</option>
-                        <option value="5000x5000">5000x5000</option>
-                        <option value="10000x10000">10000x10000</option>
-                        <option value="100000x10000">100000x100000</option>
-    
-                    </select>
+                            <option value="" disabled selected hidden>Select size</option>
+                            <option value="100x100">100x100</option>
+                            <option value="250x250">250x250</option>
+                            <option value="500x500">500x500</option>
+                            <option value="1000x1000">1000x1000</option>
+                            <option value="2500x2500">2500x2500</option>
+                            <option value="5000x5000">5000x5000</option>
+                            <option value="10000x10000">10000x10000</option>
+                            <option value="100000x10000">100000x100000</option>
+                        </select>
+                    </div>
 
-                    <label for="selectColor" class="selectLable">Color</label>
-                    <select id="selectColor" required>
+                    <div class="colorWrapper">
+                        <label for="selectColor" class="selectLable">Color</label>
+                        <select id="selectColor" required>
 
-                        <option value="" disabled selected hidden>Color</option>
-                        <option value="default">Black (Recommended)</option>
-                        <option value="255-255-255">White</option>
-                        <option value="255-0-0">Red</option>
-                        <option value="0-255-0">Green</option>
-                        <option value="0-0-255">Blue</option>
-                        <option value="custom">Custom</option>
-    
-                    </select>
+                            <option value="" disabled selected hidden>Color</option>
+                            <option value="default">Black (Recommended)</option>
+                            <option value="255-255-255">White</option>
+                            <option value="255-0-0">Red</option>
+                            <option value="0-255-0">Green</option>
+                            <option value="0-0-255">Blue</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </div>
 
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom red value" class="colorValue" id="customColR">
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom green value" class="colorValue" id="customColG">
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom blue value" class="colorValue" id="customColB">
+                    <div class="customColWrapper">
+                        <input type="number" min="0" max="255" step="1" value="0" placeholder="custom red value" class="colorValue" id="customColR">
+                        <input type="number" min="0" max="255" step="1" value="0" placeholder="custom green value" class="colorValue" id="customColG">
+                        <input type="number" min="0" max="255" step="1" value="0" placeholder="custom blue value" class="colorValue" id="customColB">
+                    </div>
 
-                    <label for="selectBgColor" class="selectLable">Background color</label>
-                    <select id="selectBgColor" required>
+                    <div class="colorWrapper">
+                        <label for="selectBgColor" class="selectLable">Background color</label>
+                        <select id="selectBgColor" required>
 
-                        <option value="" disabled selected hidden>Background</option>
-                        <option value="default">White (Recommended)</option>
-                        <option value="0-0-0">Black</option>
-                        <option value="255-0-0">Red</option>
-                        <option value="0-255-0">Green</option>
-                        <option value="0-0-255">Blue</option>
-                        <option value="custom">Custom</option>
-    
-                    </select>
+                            <option value="" disabled selected hidden>Background</option>
+                            <option value="default">White (Recommended)</option>
+                            <option value="0-0-0">Black</option>
+                            <option value="255-0-0">Red</option>
+                            <option value="0-255-0">Green</option>
+                            <option value="0-0-255">Blue</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </div>
 
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg red value" class="bgColorValue" id="customBgColR">
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg green value" class="bgColorValue" id="customBgColG">
-                    <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg blue value" class="bgColorValue" id="customBgColB">
+                    <div class="customColWrapper">
+                        <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg red value" class="bgColorValue" id="customBgColR">
+                        <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg green value" class="bgColorValue" id="customBgColG">
+                        <input type="number" min="0" max="255" step="1" value="0" placeholder="custom bg blue value" class="bgColorValue" id="customBgColB">
+                    </div>
 
                     <label for="submitInput" class="selectLable">Url to turn into QR-Code</label>
                     <input type="search" placeholder="Enter URL" id="submitInput" required>

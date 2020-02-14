@@ -11,121 +11,277 @@ lable{
 
 /* mobile */
 
-html, body, main{
-    width: 100vw;
-}
+@media only screen and (max-width: 1199px) {
+    
+    html, body, main{
+        width: 100vw;
+    }
 
-#topBar{
-    width: 100%;
-    height: 10vh;
-    padding: 5vw;
-    background-color: #00FFCC;
-}
+    #topBar{
+        width: 100%;
+        height: 10vh;
+        padding: 5vw;
+        background-color: #00FFCC;
+    }
 
-#logoWrapper{
-    display: block;
-    float: left;
-    width: 20vw;
-    margin: 0 auto;
-}
+    #logoWrapper{
+        display: block;
+        float: left;
+        width: 20vw;
+        margin: 0 auto;
+    }
 
-#addToHs{
-    float: right;
-    margin: 0;
-    padding: 1vw;
-    background-color:white;
-    box-shadow: none;
-    border: none;
-    color: #00FFCC;
-}
+    #addToHs{
+        float: right;
+        margin: 0;
+        padding: 1vw;
+        background-color:white;
+        box-shadow: none;
+        border: none;
+        color: #00FFCC;
+    }
 
-#logo{
-    width:  100%;
-}
+    #logo{
+        width:  100%;
+    }
 
-header{
-    width: 80vw;
-    margin: 5vh auto;
-}
+    header{
+        width: 80vw;
+        margin: 5vh auto;
+        clear: both;
+    }
 
-#submitForm{
-    display: block;
-    margin: 2vh auto;
-}
+    #submitForm{
+        display: block;
+        margin: 2vh auto;
+    }
 
-select, input{
-    display: block;
-    width: 60%;
-    margin: 0 auto;
-    padding: 1vw;
-    background-color: white;
-    border-color: #00FFCC;
-    box-shadow: none;
-    border-style: solid;
-    border-width: thin;
-}
+    select, input{
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+        padding: 1vw;
+        background-color: white;
+        border-color: #00FFCC;
+        box-shadow: none;
+        border-style: solid;
+        border-width: thin;
+        color: #AAAAAA;
+    }
 
-button{
-    display: block;
-    width: 30%;
-    margin: 0 auto;
-}
+    input::placeholder{
+        color: #AAAAAA;
+    }
 
-select, input, button{
-    margin-top: 2vh;
-    font-size: 1.3em;
-}
+    button{
+        display: block;
+        width: 30%;
+        margin: 0 auto;
+    }
 
-label{
-    font-size: 0em;
-}
+    select, input, button{
+        margin-top: 2vh;
+        font-size: 1.3em;
+    }
 
-#submitInput{
-    width: 100%;
-}
+    label{
+        font-size: 0em;
+    }
 
-.colorValue, .bgColorValue{
-    width: 30%;
-}
+    #submitInput{
+        width: 100%;
+    }
 
-#qrWrapper{
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-}
+    .colorValue, .bgColorValue{
+        width: 30%;
+    }
 
-#qrCode{
-    width: 30%;
-    float: left;
-}
+    #submitButton{
+        background-color: #00FFCC;
+        color: white;
+        border-style: none;
+        padding: 1vw;
+    }
 
-footer{
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-}
+    #qrWrapper{
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
 
-footer ul{
-    display: block;
-    width: 80vw;
-    margin: 0 auto;
-}
+    #qrCode{
+        width: 30%;
+        float: left;
+    }
 
-footer li{
-    display: inline;
-}
+    footer{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
 
+    footer ul{
+        display: block;
+        width: 80vw;
+        margin: 0 auto;
+    }
 
-/* tablets */
-
-@media only screen and (min-width: 600px) {
-
-
+    footer li{
+        display: inline;
+    }
 }
 
 /* desktop */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1200px) {
+
+    html, body, main{
+        width: 100vw;
+    }
+
+    #topBar{
+        width: 100%;
+        height: 5vh;
+        padding: 2vw;
+        background-color: #00FFCC;
+    }
+
+    #logoWrapper{
+        display: block;
+        float: left;
+        width: 5vw;
+    }
+
+    #addToHs{
+        float: right;
+        height: 5vw;
+        width: auto;
+        margin: 0;
+        padding: 1vw;
+        background-color:white;
+        box-shadow: none;
+        border-style: solid;
+        border-color: #00FFCC;
+        color: #00FFCC;
+    }
+
+    #addToHs:hover{
+        border-style: solid;
+        background-color: #00FFCC;
+        color: white;
+    }
+
+    #logo{
+        width:  100%;
+    }
+
+    header{
+        width: 60vw;
+        margin: 5vh auto;
+        clear: both;
+    }
+
+    #submitForm{
+        display: block;
+    }
+
+    #formatWrapper, .colorWrapper{
+        float: left;
+        clear: both;
+        width: 50%;
+    }
+
+    .sizeWrapper, .customColWrapper{
+        float: left;
+        width: 50%;
+    }
+
+    .customColWrapper input:first-of-type{
+        margin-top: 4vh;
+    }
+
+    select, input{
+        display: block;
+        padding: 1vw;
+        background-color: white;
+        border-color: #00FFCC;
+        box-shadow: none;
+        border-style: solid;
+        border-width: thin;
+        color: #AAAAAA;
+
+    }
+
+    input::placeholder{
+        color: #AAAAAA;
+    }
+
+    button{
+        display: block;
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    select, input, button{
+        margin-top: 2vh;
+    }
+
+    label{
+        font-size: 0em;
+    }
+
+    #submitInput{
+        float: left;
+        width: 100%;
+        margin: 2vh 0;
+    }
+
+    .colorValue, .bgColorValue{
+        width: 30%;
+    }
+
+    #submitButton{
+        clear: both;
+        padding: 1vw;
+        background-color: #00FFCC;
+        color: white;
+        border-style: none;
+    }
+
+    #submitButton:hover{
+        background-color: white;
+        color: #00FFCC;
+        border-style: solid;
+        border-color: #00FFCC;
+    }
+
+    #qrWrapper{
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #qrCode{
+        width: 30%;
+        float: left;
+    }
+
+    footer{
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+    footer ul{
+        display: block;
+        width: 80vw;
+        margin: 0 auto;
+    }
+
+    footer li{
+        display: inline;
+    }
+
 
 
 }
